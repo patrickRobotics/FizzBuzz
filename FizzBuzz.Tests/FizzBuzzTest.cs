@@ -31,4 +31,14 @@ public class FizzBuzzTest
         string result = FizzBuzzGame.Play(number);
         result.Should().Be("Buzz");
     }
+
+    [Theory]
+    [InlineData(3)]
+    [InlineData(6)]
+    [InlineData(9)]
+    public void GivenANumberIsDIvisibleBy3_ThenReturnFizz(int number)
+    {
+        string result = FizzBuzzGame.Play(number);
+        result.Should().Be("Fizz");
+    }
 }
