@@ -5,7 +5,7 @@ namespace FizzBuzz
     {
         public static string Play(int num)
         {
-            if (num.IsDibisibleBy(3) && num.IsDibisibleBy(5))
+            if (num.IsDibisibleBy(15))
             {
                 return "FizzBuzz";
             }
