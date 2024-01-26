@@ -5,19 +5,13 @@ namespace FizzBuzz
     {
         public static string Play(int num)
         {
-            if (num.IsDibisibleBy(15))
+            return num switch
             {
-                return "FizzBuzz";
-            }
-            if (num.IsDibisibleBy(3))
-            {
-                return "Fizz";
-            }
-            if (num.IsDibisibleBy(5))
-            {
-                return "Buzz";
-            }
-            return num.ToString();
+                _ when num.IsDibisibleBy(15) => "FizzBuzz",
+                _ when num.IsDibisibleBy(3) => "Fizz",
+                _ when num.IsDibisibleBy(5) => "Buzz",
+                _ => num.ToString(),
+            };
         }
 
         private static bool IsDibisibleBy(this int i, int divisibleBy)
