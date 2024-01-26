@@ -4,7 +4,7 @@
     {
         public static string Play(int i)
         {
-            if (i == 5)
+            if (i % 5 == 0)
             {
                 return "Buzz";
             }
