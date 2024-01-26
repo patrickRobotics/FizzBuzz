@@ -1,23 +1,26 @@
-﻿namespace FizzBuzz
+﻿
+namespace FizzBuzz
 {
-    public class FizzBuzzGame
+    public static class FizzBuzzGame
     {
-        public static string Play(int i)
+        public static string Play(int num)
         {
-            if (i % 3 == 0 && i % 5 == 0)
+            if (num.IsDibisibleBy(3) && num.IsDibisibleBy(5))
             {
                 return "FizzBuzz";
             }
-            if (i % 5 == 0)
-            {
-                return "Buzz";
-            }
-            if (i % 3 == 0)
+            if (num.IsDibisibleBy(3))
             {
                 return "Fizz";
             }
-            return i.ToString();
+            if (num.IsDibisibleBy(5))
+            {
+                return "Buzz";
+            }
+            return num.ToString();
         }
 
+        private static bool IsDibisibleBy(this int i, int divisibleBy)
+        => i % divisibleBy == 0;
     }
 }
