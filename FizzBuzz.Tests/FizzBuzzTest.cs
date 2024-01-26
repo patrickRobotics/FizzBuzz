@@ -1,4 +1,5 @@
 using FluentAssertions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FizzBuzz.Tests;
 
@@ -20,5 +21,11 @@ public class FizzBuzzTest
         string result = FizzBuzzGame.Play(number);
         result.Should().Be(number.ToString());
 
+    }
+
+    [Fact]
+    public void GivenANumberIsDIvisibleBy5_ThenReturnBuzz() {
+        string result = FizzBuzzGame.Play(5);
+        result.Should().Be("Buzz");
     }
 }
