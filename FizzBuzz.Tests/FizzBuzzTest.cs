@@ -41,4 +41,15 @@ public class FizzBuzzTest
         string result = FizzBuzzGame.Play(number);
         result.Should().Be("Fizz");
     }
+
+
+    [Theory]
+    [InlineData(15)]
+    [InlineData(30)]
+    [InlineData(45)]
+    public void GivenANumberIsDIvisibleBy3And5_ThenReturnFizzBuzz(int number)
+    {
+        string result = FizzBuzzGame.Play(number);
+        result.Should().Be("FizzBuzz");
+    }
 }
