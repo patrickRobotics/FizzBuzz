@@ -23,9 +23,12 @@ public class FizzBuzzTest
 
     }
 
-    [Fact]
-    public void GivenANumberIsDIvisibleBy5_ThenReturnBuzz() {
-        string result = FizzBuzzGame.Play(5);
+    [Theory]
+    [InlineData(5)]
+    [InlineData(10)]
+    [InlineData(15)]
+    public void GivenANumberIsDIvisibleBy5_ThenReturnBuzz(int number) {
+        string result = FizzBuzzGame.Play(number);
         result.Should().Be("Buzz");
     }
 }
